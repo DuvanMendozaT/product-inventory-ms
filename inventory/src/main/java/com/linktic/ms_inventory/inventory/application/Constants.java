@@ -19,7 +19,7 @@ public class Constants {
     public static final String RESOURCE_NOT_FOUND = "Resource not found.";
     public static final String OPERATION_FAILED = "Operation failed.";
     public static final String SERVICE_UNAVAILABLE = "Service unavailable at the moment.";
-    public static final String PRODUCT_SERVICE_PATH = "http://localhost:8080";
+    public static final String PRODUCT_SERVICE_PATH = "http://localhost:8081";
     public static final String EMPTY_RESPONSE = "Empty response";
     public static final String PRODUCT_INVENTORY_MESSAGE = "Inventory for Product with ID: ";
     public static final String MESSAGE_AUX = "Is: ";

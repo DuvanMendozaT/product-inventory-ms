@@ -4,7 +4,6 @@ import com.linktic.ms_products.product.application.Constants;
 import com.linktic.ms_products.product.application.dto.api.JsonApiData;
 import com.linktic.ms_products.product.application.dto.api.JsonApiResponse;
 import com.linktic.ms_products.product.domain.exeption.ProductNotFoundException;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

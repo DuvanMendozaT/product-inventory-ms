@@ -20,7 +20,7 @@ public class ExternalProductApiAdapter implements ExternalProductApiPort {
     private final WebClient webClient;
 
     public ExternalProductApiAdapter(WebClient.Builder builder) {
-        this.webClient = builder.baseUrl(Constants.PRODUCT_SERVICE_PATH).build();
+        this.webClient = builder.baseUrl("http://product-app:8081").build();
     }
 
     @Override
@@ -37,7 +37,7 @@ public class ExternalProductApiAdapter implements ExternalProductApiPort {
                                 .flatMap(error -> Mono.error(new ExternalServerException(error))))
                 .bodyToMono(ProductResponse.class)
                 .timeout(Duration.ofSeconds(3))
-                .retryWhen(Retry.fixedDelay(3, Duration.ofMillis(500)))
+                .retryWhen(Retry.fixedDelay(3, Duration.ofMillis(5000)))
                 .block();
 
         if (response == null) throw new ExternalServerException(Constants.EMPTY_RESPONSE);

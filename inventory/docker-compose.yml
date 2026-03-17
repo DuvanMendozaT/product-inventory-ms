@@ -30,4 +30,5 @@ services:
 
 networks:
   backend-net:
-    driver: bridge
+    external: true
+    name: backend-net

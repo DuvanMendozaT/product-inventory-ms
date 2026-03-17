@@ -14,5 +14,7 @@ public interface ProductPersistenceMapper {
 
     ProductModel toDomain(ProductEntity entity);
 
-    Page<ProductModel> toDomainList(Page<ProductEntity> entities);
+    default Page<ProductModel> toDomainList(Page<ProductEntity> entities) {
+        return entities.map(this::toDomain);
+    }
 }

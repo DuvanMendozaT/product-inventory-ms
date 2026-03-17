@@ -8,8 +8,8 @@ import java.util.Optional;
 
 public interface InventoryRepository {
 
-    InventoryModel save(InventoryModel product);
+    InventoryModel save(InventoryModel inventoryModel);
 
-    Optional<InventoryModel> findById(Long id);
+    Optional<InventoryModel> findByProductId(Long id);
 
 }

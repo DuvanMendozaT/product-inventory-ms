@@ -24,7 +24,7 @@ public class InventoryServiceImpl implements  InventoryService{
 
     @Override
     public InventoryModel getProductInventory(Long productId) {
-             return inventoryRepository.findById(productId)
+             return inventoryRepository.findByProductId(productId)
                 .orElseThrow(() -> new InventpryNotFoundException(Constants.PRODUCT_NOT_FOUND));
     }
 
@@ -50,7 +50,7 @@ public class InventoryServiceImpl implements  InventoryService{
     @Override
     public InventoryModel createInventory(InventoryRequest inventoryRequest) {
         InventoryModel inventoryModel = InventoryModel.builder()
-                .id(inventoryRequest.getProductId())
+                .productId(inventoryRequest.getProductId())
                 .quantity(inventoryRequest.getQuantity())
                 .build();
 
